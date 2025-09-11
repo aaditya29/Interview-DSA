@@ -1,6 +1,6 @@
 # Strivers A2Z DSA Sheet
 
-## STL
+## Intermediate STL Concepts
 
 - `bitset`
 - `sort()`
