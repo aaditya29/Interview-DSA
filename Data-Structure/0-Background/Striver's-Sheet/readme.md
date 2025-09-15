@@ -16,3 +16,5 @@
 - `prev_permutation()`
 - comparator
 - Practice problems related to the last few functions
+- Recursion
+- Hashing Functions
