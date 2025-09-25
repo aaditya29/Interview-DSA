@@ -1,6 +1,10 @@
 // Leetcode 1912. Design Movie Rental System
 #include <iostream>
 #include <deque>
+#include <vector>
+#include <set>
+#include <map>
+#include <tuple>
 
 using namespace std;
 class MovieRentingSystem
@@ -73,14 +77,15 @@ public:
 
 int main()
 {
-    MovieRentingSystem movieRentingSystem(3, {{0, 1, 5}, {0, 2, 6}, {0, 3, 7}, {1, 1, 4}, {1, 2, 7}, {2, 1, 5}}); // Initializes the system with n = 3 shops and the entries shown.
-    movieRentingSystem.search(1);                                                                                 // Returns [1,0,2]. Shops 1, 0 and 2 have an unrented movie 1 at prices 4, 5 and 5 respectively.
-    movieRentingSystem.rent(0, 1);                                                                                // Shop 0 rents movie 1.
-    movieRentingSystem.rent(1, 2);                                                                                // Shop 1 rents movie 2.
-    movieRentingSystem.report();                                                                                  // Returns [[0,1],[1,2]]. The rented movies are (0,1) at price 5 and (1,2) at price 7.
-    movieRentingSystem.drop(1, 2);                                                                                // Shop 1 drops movie 2.
-    movieRentingSystem.search(2);                                                                                 // Returns [0]. Shop 0 has an unrented movie 2 at price 6.
-    movieRentingSystem.rent(0, 2);                                                                                // Shop 0 rents movie 2.
-    movieRentingSystem.report();                                                                                  // Returns [[0,1],[0,2]]. The rented movies are (0,1) at price 5 and (0,2) at price 6.
+    vector<vector<int>> entries = {{0, 1, 5}, {0, 2, 6}, {0, 3, 7}, {1, 1, 4}, {1, 2, 7}, {2, 1, 5}};
+    MovieRentingSystem movieRentingSystem(3, entries); // Initializes the system with n = 3 shops and the entries shown.
+    movieRentingSystem.search(1);                      // Returns [1,0,2]. Shops 1, 0 and 2 have an unrented movie 1 at prices 4, 5 and 5 respectively.
+    movieRentingSystem.rent(0, 1);                     // Shop 0 rents movie 1.
+    movieRentingSystem.rent(1, 2);                     // Shop 1 rents movie 2.
+    movieRentingSystem.report();                       // Returns [[0,1],[1,2]]. The rented movies are (0,1) at price 5 and (1,2) at price 7.
+    movieRentingSystem.drop(1, 2);                     // Shop 1 drops movie 2.
+    movieRentingSystem.search(2);                      // Returns [0]. Shop 0 has an unrented movie 2 at price 6.
+    movieRentingSystem.rent(0, 2);                     // Shop 0 rents movie 2.
+    movieRentingSystem.report();                       // Returns [[0,1],[0,2]]. The rented movies are (0,1) at price 5 and (0,2) at price 6.
     return 0;
 }
