@@ -1,4 +1,5 @@
 // leetcode 961. N-Repeated Element in Size 2N Array
+#include <iostream>
 #include <vector>
 #include <unordered_map>
 using namespace std;
